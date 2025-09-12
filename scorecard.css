@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  background: #dcdcdc;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #3b5998, #8ca4df);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+header .icon {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* Scorecard Layout */
+.score-container {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.box {
+  background-color: #8b92c9;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  color: #000;
+}
+
+.left, .right {
+  width: 40%;
+}
+
+.score {
+  font-size: 32px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Improvement Tip Box */
+.box.full {
+  width: 90%;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  background: #a8b0e6;
+  padding: 20px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer .footer-left,
+footer .footer-center {
+  margin: 5px 20px;
+}
+
+.icon {
+  margin: 0 4px;
+}

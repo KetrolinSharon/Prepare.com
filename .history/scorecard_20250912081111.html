@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="scoreApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scorecard | Prepare.com</title>
+  <link rel="stylesheet" href="scorecard.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="ScoreController">
+
+  <!-- Header -->
+  <div id="header">
+    <h1>Prepare.com</h1>
+  </div>
+
+  <main class="score-container">
+    <div class="box left">
+      <h3>Your ScoreCard</h3>
+      <p>You<br>Done<br>Great!</p>
+      <div class="score">{{ score.obtained }} / {{ score.total }}</div>
+      <p>Cheers to your success!<br>Congratulations on a job well done.</p>
+    </div>
+
+    <div class="box right">
+      <h3>Tips to improve!</h3>
+      <p><strong>Where do you lag?</strong> {{ tips.lag }}</p>
+      <p><strong>What impressed?</strong> {{ tips.impress }}</p>
+      <p><strong>Improvement tip:</strong> {{ tips.general }}</p>
+    </div>
+
+    <div class="box full">
+      <h3>Improvement Tip:</h3>
+      <p>{{ tips.detail }}</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <strong>Prepare.com</strong><br />
+      AI based mock interview website — upskill your skills with us
+    </div>
+    <div class="footer-center">
+      contact us
+      <span class="icon">📷</span> instagram
+      <span class="icon">✖️</span> twitter
+      <span class="icon">📘</span> facebook
+      <br />
+      copyright 2025 | All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    var app = angular.module("scoreApp", []);
+
+    app.controller("ScoreController", ["$scope", "$http", function($scope, $http) {
+      $scope.score = { obtained: 0, total: 50 };
+      $scope.tips = {
+        lag: "Loading...",
+        impress: "Loading...",
+        general: "Loading...",
+        detail: "Loading..."
+      };
+
+      // ✅ Fetch score + tips from backend
+      $http.get("http://localhost:5000/api/scorecard/latest")
+        .then(function(response) {
+          $scope.score = response.data.score;
+          $scope.tips = response.data.tips;
+        })
+        .catch(function(err) {
+          console.error("Error fetching scorecard:", err);
+        });
+    }]);
+  </script>
+</body>
+</html>

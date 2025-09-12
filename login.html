@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="loginApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Prepare.com</title>
+  <link rel="stylesheet" href="login.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="login.js"></script>
+</head>
+<body ng-controller="LoginController as vm">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Prepare<span>.com</span></div>
+    <nav>
+      <a href="#">My Account</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Bubbles Background -->
+  <div class="bubble-bg">
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <form class="login-form" ng-submit="vm.login()">
+      <h2>{{ welcomeText | uppercase }}</h2>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" ng-model="vm.user.email" placeholder="Enter your email" highlight-field required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ng-model="vm.user.password" placeholder="Enter your password" highlight-field required />
+
+      <p class="forgot">Forgotten password?</p>
+
+      <button type="submit">Log in</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <p><strong>AI Based Mock Interview</strong><br>Unlock your skills with us.</p>
+    </div>
+    <div class="footer-right">
+      <p>
+        <a href="#">Contact</a> |
+        <a href="#">Instagram</a> |
+        <a href="#">Twitter</a> |
+        <a href="#">Facebook</a>
+      </p>
+      <p>&copy; 2025 Prepare.com | All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

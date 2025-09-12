@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="FeedbackApp">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feedback | Prepare.com</title>
+  <link rel="stylesheet" href="feedback.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="feedback.js"></script>
+</head>
+<body ng-controller="FeedbackController">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Prepare<span>.com</span></div>
+    <nav>
+      <a href="#">My Account</a>
+      <a href="#about">About Us</a>
+    </nav>
+  </header>
+
+  <!-- Feedback Section -->
+  <section class="feedback-section">
+    <h2>FEEDBACK</h2>
+    <div class="feedback-box">
+      <textarea ng-model="feedbackText" placeholder="SHARE YOUR EXPERIENCE WITH US....."></textarea>
+      <button ng-click="submitFeedback()">Submit</button>
+    </div>
+    <p class="note">{{ feedbackText | wordCap }}</p>
+    <p class="note">Your input is valuable for us... Happy learning..!!!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <strong>Prepare.com</strong><br />
+      AI based mock interview<br />
+      Upskill your skills with us
+    </div>
+    <div class="footer-center">
+      Contact us:
+      <span class="icon">📷</span> Instagram
+      <span class="icon">✖️</span> Twitter
+      <span class="icon">📘</span> Facebook
+      <br />
+      © 2025 | All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

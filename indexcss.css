@@ -1,0 +1,317 @@
+
+:root {
+  --primary-bg: #2a2a4f;
+  --primary-hover: #444791;
+  --accent-neon: #00f7ff;
+  --text-light: #e0e0e0;
+  --text-white: #684646;
+  --page-bg: #f6f6fc;
+  --footer-bg: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--page-bg);
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  background: var(--primary-bg);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: var(--text-white);
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--text-white);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 4rem;
+  background: linear-gradient(270deg, #000, #1c1c1c, #000);
+  background-size: 600% 600%;
+  animation: bgAnimation 10s ease infinite;
+  min-height: 100vh;
+  flex-wrap: wrap;
+  gap: 2rem; /* Adds space between content and buttons */
+}
+
+@keyframes bgAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+.hero-content {
+  max-width: 50%;
+  min-width: 280px;
+}
+
+/* Typing & Neon Effect */
+.hero-content h1 {
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: var(--text-white);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid var(--text-white);
+  width: 0;
+  animation: typing 3s steps(30, end) forwards, blink 0.75s step-end infinite;
+  text-shadow: 0 0 5px var(--accent-neon), 0 0 10px var(--accent-neon), 0 0 20px #00bcd4;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: var(--text-white); }
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  animation: fadeIn 2s ease-in;
+  margin-top: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Circle Auth Buttons */
+.auth-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: slideIn 1s ease-in-out;
+}
+
+.auth-button {
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-bg);
+  color: var(--text-white);
+  font-weight: 600;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.auth-button:hover {
+  background-color: var(--primary-hover);
+  transform: scale(1.1);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-50%) translateX(100px); }
+  to { opacity: 1; transform: translateY(-50%) translateX(0); }
+}
+/* Bubble Container */
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Individual Bubbles */
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 50%;
+  animation: rise 15s infinite ease-in;
+  opacity: 0.6;
+}
+
+/* Vary the bubble sizes and positions */
+.bubble:nth-child(1) { left: 10%; width: 60px; height: 60px; animation-duration: 18s; }
+.bubble:nth-child(2) { left: 25%; width: 40px; height: 40px; animation-duration: 22s; }
+.bubble:nth-child(3) { left: 50%; width: 100px; height: 100px; animation-duration: 20s; }
+.bubble:nth-child(4) { left: 75%; width: 70px; height: 70px; animation-duration: 16s; }
+.bubble:nth-child(5) { left: 90%; width: 50px; height: 50px; animation-duration: 24s; }
+
+/* Bubble Rise Animation */
+@keyframes rise {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+.hero-section, .hero-content {
+  position: relative;
+  z-index: 1;
+}
+.about-section {
+  background-color: var(--primary-bg);
+  padding: 5rem 3rem;
+  text-align: center;
+}
+
+.about-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: auto;
+  border-radius: 12px;
+  animation: fadeInUp 1.5s ease-in-out;
+  transition: transform 0.4s ease;
+}
+
+.about-overlay:hover {
+  transform: scale(1.03);
+}
+
+.about-section h2, .about-section p {
+  color: var(--text-white);
+}
+
+.about-section h2 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-white);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--text-white);
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .auth-card {
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+}
+
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  nav a {
+    margin-left: 0;
+    margin: 5px;
+  }
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
+/* Ensure bubbles don't block clicks */
+.bubble-container,
+.bubble {
+  pointer-events: none;
+}
+
+/* Make buttons appear above everything */
+.auth-card {
+  position: relative;
+  z-index: 1000;
+}
+
+.auth-button {
+  cursor: pointer;
+}
