@@ -208,7 +208,7 @@ nav a:hover {
 }
 
 .about-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 4rem 2rem;
   max-width: 800px;
   margin: auto;
@@ -222,7 +222,7 @@ nav a:hover {
 }
 
 .about-section h2, .about-section p {
-  color: var(--text-white);
+  color: white;
 }
 
 .about-section h2 {
