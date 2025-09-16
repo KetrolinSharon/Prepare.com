@@ -68,15 +68,20 @@ angular.module('signupApp', [])
     vm.message = MessageFactory.getWelcomeMessage();
 
     vm.signup = function () {
-      SignupService.register(vm.user)
-        .then(function (response) {
-          alert("Signup Successful!\nWelcome, " + vm.user.name);
-          window.location.href = "index.html"; // redirect to login page
-        })
-        .catch(function (error) {
-          alert(error.data.message || "Signup Failed! Please check your inputs.");
-        });
-    };
+    SignupService.register(vm.user)
+    .then(function (response) {
+      alert("Signup Successful!\nWelcome, " + vm.user.name);
+      window.location.href = "home.html"; // redirect to login page
+    })
+    .catch(function (error) {
+      console.error("Signup error:", error);
+      let msg = (error.data && error.data.message) 
+                  ? error.data.message 
+                  : "Server unreachable. Please try again later.";
+      alert(msg);
+    });
+  };
+
   }])
 
   // Service: Handles Registration Logic (connects to server.js)

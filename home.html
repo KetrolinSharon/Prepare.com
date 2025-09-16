@@ -4,30 +4,31 @@
   <meta charset="UTF-8">
   <title>Prepare.com</title>
   <link rel="stylesheet" href="home.css">
+  <!-- AngularJS core + modules -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
 </head>
 <body ng-controller="MainController">
 
- <!-- HEADER -->
-<header class="navbar">
-  <h1 class="logo">Prepare.com</h1>
-  <nav>
-    <button class="my-account-btn" ng-click="goToAccount()">My Account</button>
-  </nav>
-</header>
-
+  <!-- HEADER -->
+  <header class="navbar">
+    <h1 class="logo">Prepare.com</h1>
+    <nav>
+      <button class="my-account-btn" ng-click="goToAccount()">My Account</button>
+    </nav>
+  </header>
 
   <!-- FLOATING BANNER -->
   <div class="floating-banner">
-    <h2>{{ title | capitalize }}</h2> <!-- 🚨 capitalize filter missing -->
+    <h2>{{ title | capitalize }}</h2>
   </div>
 
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="hero-text">
-      <p>{{ subtitle }}</p> <!-- 🚨 subtitle missing -->
-      <button class="start-btn" ng-click="startInterview()">Start Interview</button> <!-- 🚨 not defined -->
+      <p>{{ subtitle }}</p>
+      <button class="start-btn" ng-click="startInterview()">Start Interview</button>
     </div>
     <div class="hero-img">
       <img src="https://lectera.com/info/storage/img/20220816/4e30305d1be37f7f6ec3_808xFull.jpg" alt="Interview Image">
@@ -38,22 +39,25 @@
   <section class="cards-section">
     <div class="card" highlight>
       <h3>Generate questions</h3>
-      <p>{{ servicesText }}</p> <!-- 🚨 missing -->
-      <button ng-click="generateQuestions()">Generate Questions</button> <!-- 🚨 not defined -->
+      <p>{{ servicesText }}</p>
+      <button ng-click="generateQuestions()">Generate Questions</button>
     </div>
 
     <div class="card" highlight>
       <h3>Practice answering</h3>
-      <p>{{ practiceText }}</p> <!-- 🚨 missing -->
-      <button ng-click="practice()">Practice Question</button> <!-- 🚨 not defined -->
+      <p>{{ practiceText }}</p>
+      <button ng-click="practice()">Practice Question</button>
     </div>
 
     <div class="card" highlight>
       <h3>Get feedback</h3>
-      <p>{{ feedbackText }}</p> <!-- 🚨 missing -->
-      <button ng-click="getFeedback()">Get Feedback</button> <!-- 🚨 not defined -->
+      <p>{{ feedbackText }}</p>
+      <button ng-click="getFeedback()">Get Feedback</button>
     </div>
   </section>
+
+  <!-- ROUTER OUTLET -->
+  <div ng-view></div>
 
   <!-- FOOTER -->
   <footer>

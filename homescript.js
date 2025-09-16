@@ -1,22 +1,23 @@
-var app = angular.module('prepareApp', ['ngAnimate']);
+var app = angular.module('prepareApp', ['ngAnimate', 'ngRoute']);
 
-// ✅ Add capitalize filter
-app.filter('capitalize', function() {
-  return function(input) {
-    if (!input) return '';
-    return input.charAt(0).toUpperCase() + input.slice(1);
-  };
+// ✅ Routing
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/interview", {
+      templateUrl: "interview.html",
+      controller: "InterviewController"
+    })
+    .otherwise({ redirectTo: "/" });
 });
 
-app.controller('MainController', function($scope) {
-  // ✅ Scope variables
+// ✅ Main Controller
+app.controller("MainController", function($scope, $location) {
   $scope.title = "welcome to prepare.com";
   $scope.subtitle = "Your personal AI-based interview coach.";
   $scope.servicesText = "AI-generated mock questions tailored for you.";
   $scope.practiceText = "Sharpen your skills with timed practice sessions.";
   $scope.feedbackText = "Receive instant, detailed feedback.";
 
-  // ✅ Functions
   $scope.startInterview = function() {
     alert("Interview started!");
   };
@@ -26,15 +27,27 @@ app.controller('MainController', function($scope) {
   };
 
   $scope.practice = function() {
-    alert("Practice session started!");
-  };
+  window.location.href = "interview.html";
+};
 
   $scope.getFeedback = function() {
     alert("Feedback generated!");
   };
+
+  $scope.goToAccount = function() {
+    alert("Redirecting to My Account...");
+  };
 });
 
-// ✅ highlight directive
+// ✅ Capitalize filter
+app.filter('capitalize', function() {
+  return function(input) {
+    if (!input) return '';
+    return input.charAt(0).toUpperCase() + input.slice(1);
+  };
+});
+
+// ✅ Highlight directive
 app.directive('highlight', function() {
   return {
     restrict: 'A',
@@ -44,3 +57,12 @@ app.directive('highlight', function() {
     }
   };
 });
+
+// ✅ Interview Page Controller
+app.controller("MainController", function($scope) {
+  $scope.practice = function() {
+    // 👉 Navigate directly to interview.html
+    window.location.href = "interview.html";
+  };
+});
+
