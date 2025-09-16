@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Scorecard = require("../models/Scorecard");
 
-// ✅ Create a scorecard
+// Create a scorecard
 router.post("/", async (req, res) => {
   try {
     const newScorecard = new Scorecard(req.body);
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// ✅ Get latest scorecard
+// Get latest scorecard
 router.get("/latest", async (req, res) => {
   try {
     const latest = await Scorecard.findOne().sort({ createdAt: -1 });

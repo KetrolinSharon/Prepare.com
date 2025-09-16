@@ -160,6 +160,7 @@
     }, interval);
   };
 
+  // ✅ Init with question + start timer
 $scope.init = function() {
   QuestionService.getQuestion().then(function(q) {
     $scope.question = q;

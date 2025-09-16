@@ -64,10 +64,11 @@ angular.module('FeedbackApp', [])
 
   // Service: send feedback to backend
   .service('FeedbackService', ['$http', function($http) {
-    this.saveFeedback = function(text) {
-      return $http.post("http://localhost:5000/feedback", { text: text });
-    };
-  }])
+  this.saveFeedback = function(text) {
+    return $http.post("http://localhost:5000/api/feedback", { text: text });
+  };
+}])
+
 
   // Factory: simple logger
   .factory('LoggerFactory', function() {
