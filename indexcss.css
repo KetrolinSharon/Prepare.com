@@ -4,7 +4,7 @@
   --primary-hover: #444791;
   --accent-neon: #00f7ff;
   --text-light: #e0e0e0;
-  --text-white: #684646;
+  --text-white: #f6f6fc;
   --page-bg: #f6f6fc;
   --footer-bg: #000;
 }
@@ -68,13 +68,13 @@ nav a:hover {
   flex-wrap: wrap;
   gap: 2rem; /* Adds space between content and buttons */
 }
-
+/*
 @keyframes bgAnimation {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-
+*/
 
 
 .hero-content {
@@ -202,10 +202,33 @@ nav a:hover {
   z-index: 1;
 }
 .about-section {
-  background-color: var(--primary-bg);
+  position: relative;
   padding: 5rem 3rem;
   text-align: center;
+  overflow: hidden; /* keep video contained */
 }
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* makes video behave like background-size: cover */
+  z-index: -1; /* behind the content */
+}
+
+.about-overlay {
+  position: relative;
+  z-index: 1;
+  color: white; /* readable over video */
+  background: rgba(0, 0, 0, 0.4); /* optional semi-transparent overlay */
+  padding: 2rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+
 
 .about-overlay {
   background-color: rgba(0, 0, 0, 0.1);
