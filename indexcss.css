@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 :root {
   --primary-bg: #2a2a4f;
@@ -31,10 +32,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.2rem 3rem;
-  background: var(--primary-bg);
+  background: black;
 }
 
 .logo {
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   font-size: 1.6rem;
   color: var(--text-white);
@@ -128,7 +130,7 @@ nav a:hover {
 .auth-button {
   width: 70px;
   height: 70px;
-  background-color: var(--primary-bg);
+  background-color: #9CA2CD;
   color: var(--text-white);
   font-weight: 600;
   border: none;
