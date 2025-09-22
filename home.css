@@ -1,4 +1,6 @@
 /* GLOBAL */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #e4e4e4;
@@ -11,11 +13,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
+  padding: 0.6rem 3rem;  /* reduced vertical padding */
   background: #2a2a4f;
 }
 
+
 .logo {
+      font-family: 'Raleway', sans-serif;
+
   font-weight: bold;
   font-size: 1.6rem;
   color: white;
@@ -23,7 +28,7 @@ header {
 
 .my-account-btn {
   margin-left: 30px;
-  text-decoration: none;
+  text-decoration:none;
   color:#444791;
   font-weight: 500;
   padding: 6px 12px;
@@ -107,6 +112,14 @@ header {
   background-color: #f0f0f0;
 }
 
+.cards-container {
+  display: flex;
+  justify-content: center; /* center cards horizontally */
+  gap: 20px;               /* space between cards */
+  flex-wrap: wrap;         /* wrap on smaller screens */
+  padding: 20px;
+}
+
 .card {
   background-color: white;
   padding: 25px;
@@ -116,6 +129,21 @@ header {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for card hover */
 }
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+
+/* Optional: Hover effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 
 /* ENGAGEMENT SECTION */
 .engagement {

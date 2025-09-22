@@ -21,7 +21,7 @@
 
   <!-- FLOATING BANNER -->
   <div class="floating-banner">
-    <h2>{{ title | capitalize }}</h2>
+    <h2>Your Interview, Your Victory!!</h2>
   </div>
 
   <!-- HERO SECTION -->
@@ -35,26 +35,32 @@
     </div>
   </section>
 
-  <!-- ACTION CARDS -->
+  <!-- ACTION CARDS-->
   <section class="cards-section">
+  <div class="cards-container">
     <div class="card" highlight>
-      <h3>Generate questions</h3>
+      <img src="question.jpeg" alt="Generate Questions Icon">
+      <h3>Generate Questions</h3>
       <p>{{ servicesText }}</p>
       <button ng-click="generateQuestions()">Generate Questions</button>
     </div>
 
     <div class="card" highlight>
-      <h3>Practice answering</h3>
-      <p>{{ practiceText }}</p>
-      <button ng-click="practice()">Practice Question</button>
+      <img src="ans.jpeg" alt="Mock Interview Icon">
+      <h3>Mock Interviews</h3>
+      <p>{{ servicesText2 }}</p>
+      <button ng-click="startMockInterview()">Start Mock Interview</button>
     </div>
 
     <div class="card" highlight>
-      <h3>Get feedback</h3>
-      <p>{{ feedbackText }}</p>
+      <img src="feedback.jpeg" alt="Feedback Icon">
+      <h3>Get Feedback</h3>
+      <p>{{ servicesText3 }}</p>
       <button ng-click="getFeedback()">Get Feedback</button>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- ROUTER OUTLET -->
   <div ng-view></div>
