@@ -1,5 +1,4 @@
 var app = angular.module('prepareApp', ['ngAnimate', 'ngRoute']);
-
 // ✅ Routing
 app.config(function($routeProvider) {
   $routeProvider
