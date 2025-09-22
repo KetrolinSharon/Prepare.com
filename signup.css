@@ -1,4 +1,6 @@
 /* General Body */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -17,6 +19,8 @@ header {
 }
 
 .logo {
+      font-family: 'Raleway', sans-serif;
+
   font-weight: bold;
   font-size: 1.6rem;
   color: white;
@@ -94,12 +98,17 @@ nav a:hover {
 
 /* Signup Form */
 .login-form {
-  background: #2a2a4f;
+  background: rgba(255, 255, 255, 0.1);  /* semi-transparent white */
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 12px;
   width: 350px;
   color: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4); /* stronger shadow for black bg */
+  
+  /* Glass effect */
+  backdrop-filter: blur(10px);          /* blur the background behind */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle glass border */
 }
 
 .login-form h2 {
