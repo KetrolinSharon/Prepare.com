@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="feedbackApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Feedback - Prepare.com</title>
+  <link rel="stylesheet" href="getfeedback.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-controller="FeedbackController">
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <h1 class="logo">Prepare.com</h1>
+    <nav>
+      <button class="my-account-btn" ng-click="goHome()">Home</button>
+    </nav>
+  </header>
+
+  <!-- FLOATING BANNER -->
+  <div class="floating-banner">
+    <h2>Instant Feedback</h2>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2 class="tagline">Paste or type your answers to get AI-powered feedback.</h2>
+      <textarea ng-model="answer" placeholder="Paste your answer here..." class="input-box" rows="6"></textarea>
+      <button class="start-btn" ng-click="getFeedback()">Get Feedback</button>
+    </div>
+    <div class="hero-img">
+      <img src="feedback.jpeg" alt="Get Feedback">
+    </div>
+  </section>
+
+  <!-- FEEDBACK RESULT -->
+  <section class="cards-section" ng-if="feedback">
+    <div class="cards-container">
+      <div class="card">
+        <h3>Your Feedback</h3>
+        <p>{{feedback}}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <p><strong>Prepare.com</strong><br>AI-based mock interview website to skill up.</p>
+    </div>
+    <div class="footer-middle">
+      <p>Connect with us</p>
+      <div class="social-icons">
+        <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/instagram-new.png" /></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/twitter.png" /></a>
+        <a href="#"><img src="https://img.icons8.com/ios-filled/20/ffffff/facebook.png" /></a>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p>© 2025 | All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="getfeedback.js"></script>
+</body>
+</html>

@@ -1,44 +1,36 @@
 var app = angular.module('prepareApp', ['ngAnimate', 'ngRoute']);
-// ✅ Routing
-app.config(function($routeProvider) {
-  $routeProvider
-    .when("/interview", {
-      templateUrl: "interview.html",
-      controller: "InterviewController"
-    })
-    .otherwise({ redirectTo: "/" });
-});
 
-// ✅ Main Controller
-app.controller("MainController", function($scope, $location) {
-  $scope.title = "welcome to prepare.com";
+// Main Controller
+app.controller("MainController", function($scope) {
+  $scope.title = "Welcome to Prepare.com";
   $scope.subtitle = "Your personal AI-based interview coach.";
   $scope.servicesText = "AI-generated mock questions tailored for you.";
   $scope.practiceText = "Sharpen your skills with timed practice sessions.";
   $scope.feedbackText = "Receive instant, detailed feedback.";
 
+  // Redirects
   $scope.startInterview = function() {
-    alert("Interview started!");
+    window.location.href = "interview.html";
   };
 
   $scope.generateQuestions = function() {
-    alert("Questions generated!");
+    window.location.href = "questions.html";
   };
 
-  $scope.practice = function() {
-  window.location.href = "interview.html";
-};
+  $scope.startMockInterview = function() {
+    window.location.href = "interview.html";
+  };
 
   $scope.getFeedback = function() {
-    alert("Feedback generated!");
+    window.location.href = "getfeedback.html";
   };
 
   $scope.goToAccount = function() {
-    alert("Redirecting to My Account...");
+    window.location.href = "account.html"; // Or your account page
   };
 });
 
-// ✅ Capitalize filter
+// Capitalize filter
 app.filter('capitalize', function() {
   return function(input) {
     if (!input) return '';
@@ -46,7 +38,7 @@ app.filter('capitalize', function() {
   };
 });
 
-// ✅ Highlight directive
+// Highlight directive
 app.directive('highlight', function() {
   return {
     restrict: 'A',
@@ -56,12 +48,3 @@ app.directive('highlight', function() {
     }
   };
 });
-
-// ✅ Interview Page Controller
-app.controller("MainController", function($scope) {
-  $scope.practice = function() {
-    // 👉 Navigate directly to interview.html
-    window.location.href = "interview.html";
-  };
-});
-

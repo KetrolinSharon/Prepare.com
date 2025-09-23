@@ -1,4 +1,4 @@
-/* GLOBAL */
+/* Base Styles copied from home.css */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 body {
@@ -8,19 +8,16 @@ body {
   padding: 0;
 }
 
-/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.6rem 3rem;  /* reduced vertical padding */
+  padding: 0.6rem 3rem;
   background: #2a2a4f;
 }
 
-
 .logo {
-      font-family: 'Raleway', sans-serif;
-
+  font-family: 'Raleway', sans-serif;
   font-weight: bold;
   font-size: 1.6rem;
   color: white;
@@ -28,8 +25,8 @@ header {
 
 .my-account-btn {
   margin-left: 30px;
-  text-decoration:none;
-  color:#444791;
+  text-decoration: none;
+  color: #444791;
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
@@ -42,7 +39,6 @@ header {
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
 }
 
-/* FLOATING CENTER HEADING */
 .floating-banner {
   width: 100%;
   text-align: center;
@@ -58,14 +54,13 @@ header {
   border-radius: 20px;
   border: 2px solid #3c78d8;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease; /* Animation for text shadow */
+  transition: box-shadow 0.3s ease;
 }
 
 .floating-banner h2:hover {
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* HERO SECTION */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -85,9 +80,7 @@ header {
   border-radius: 12px;
 }
 
-/* BUTTONS */
-.start-btn,
-.card button {
+.start-btn {
   padding: 12px 25px;
   font-size: 16px;
   border: none;
@@ -97,12 +90,10 @@ header {
   transition: background 0.3s ease;
 }
 
-.start-btn:hover,
-.card button:hover {
+.start-btn:hover {
   background-color: #7f85b8;
 }
 
-/* CARDS */
 .cards-section {
   display: flex;
   justify-content: center;
@@ -114,9 +105,9 @@ header {
 
 .cards-container {
   display: flex;
-  justify-content: center; /* center cards horizontally */
-  gap: 20px;               /* space between cards */
-  flex-wrap: wrap;         /* wrap on smaller screens */
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   padding: 20px;
 }
 
@@ -127,19 +118,8 @@ header {
   width: 300px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation for card hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.hero-text .tagline {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: black;
-  margin: 10px auto 20px;   /* auto makes it center horizontally */
-  line-height: 1.5;
-  max-width: 500px;         /* keeps text readable */
-  text-align: center;       /* centers the text inside */
-}
-
-
 
 .card img {
   width: 120px;
@@ -149,41 +129,32 @@ header {
   border-radius: 20px;
 }
 
-/* Optional: Hover effect */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-
-/* ENGAGEMENT SECTION */
-.engagement {
+.hero-text .tagline {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: black;
+  margin: 10px auto 20px;
+  line-height: 1.5;
+  max-width: 500px;
   text-align: center;
-  background: #ffffff;
-  padding: 60px 30px;
 }
 
-.engagement h2 {
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.engagement-row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-}
-
-.engagement-item {
-  width: 250px;
-  background: #f4f4fa;
-  padding: 20px;
+/* Textarea input for feedback page */
+.input-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin: 15px 0;
   border-radius: 12px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
 
-/* FOOTER */
 footer {
   background-color: #2a2a4f;
   padding: 30px 50px;
@@ -199,14 +170,4 @@ footer .social-icons img {
 
 footer p {
   margin: 10px 0;
-}
-/* question page */
-.input-box {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px;
-  margin: 15px 0;
-  border-radius: 12px;
-  border: 1px solid #ccc;
-  font-size: 16px;
 }
